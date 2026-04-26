@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte';
+  import CodePoetry from '$lib/components/fx/CodePoetry.svelte';
   import { history, booted, completeBoot } from '$lib/stores/terminal.js';
   import { activeSection } from '$lib/stores/terminal.js';
   import BootSequence from './BootSequence.svelte';
@@ -45,11 +46,10 @@
     setTimeout(() => {
       const greeting = getLocationGreeting(getGreeting());
       vikeOrb?.speak(
-        `${greeting} I am the Vocal Interface for a Kinetic Exploration Vyke, built by Senior Sir Geoffrey. He's expecting your call. Type help to begin, or click me to speak.`
+        `${greeting} I am the Vocal Interface for a Kinetic Exploration vyke, built by Senior Sir Geoffrey. Hope you enjoy the experience. Type help to begin, or click me to speak.`
       );
-    }, 600);
+    }, 1200);
   }
-
   function handleTerminalClick() {
     inputRef?.focus();
   }
@@ -99,12 +99,15 @@
   }
 
   onMount(() => {
-    // VIKE speak handler
-    const speakHandler = (e) => vikeOrb?.speak(e.detail);
-    window.addEventListener('vike:speak', speakHandler);
+    // Listen for VIKE speak events from sections
+    const speakHandler = (e) => {
+      setTimeout(() => vikeOrb?.speak(e.detail), 100);
+    };
 
-    // hireme confetti handler
+    // Listen for hireme confetti
     const hireHandler = () => launchConfetti();
+
+    window.addEventListener('vike:speak', speakHandler);
     window.addEventListener('hireme:trigger', hireHandler);
 
     return () => {
@@ -149,6 +152,12 @@
 
     {#if showInput}
       <CommandInput bind:this={inputRef} />
+    {/if}
+    {#if showInput}
+      <CommandInput bind:this={inputRef} />
+      <div class="poetry-line">
+        <CodePoetry />
+      </div>
     {/if}
 
   </div>
@@ -228,6 +237,12 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+  }
+
+  .poetry-line {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
   }
 
   .history-line {
