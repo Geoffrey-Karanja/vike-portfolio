@@ -240,7 +240,13 @@
      <button
         class="proj-label"
         class:selected={selected?.id === proj.id}
-        style="..."
+        style="
+          left: {i === 0 ? '18%' : i === 1 ? '50%' : '82%'};
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border-color: {proj.typeColor}22;
+          --proj-color: {proj.typeColor};
+        "
         on:click={() => { playClick(); selected = proj; targetRadius = 14; }}
       >
       

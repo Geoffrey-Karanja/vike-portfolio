@@ -43,17 +43,22 @@
     showInput = true;
     completeBoot();
     setTimeout(() => inputRef?.focus(), 100);
-    setTimeout(() => {
-      const greeting = getLocationGreeting(getGreeting());
-      vikeOrb?.speak(
-        `${greeting} I am the Vocal Interface for a Kinetic Exploration vyke, built by Senior Sir Geoffrey. Hope you enjoy the experience. Type help to begin, or click me to speak.`
-      );
-    }, 1200);
-  }
-  function handleTerminalClick() {
-    inputRef?.focus();
-  }
 
+    // Retry speaking every 200ms until orb is ready
+    let attempts = 0;
+    const trySpeak = () => {
+      attempts++;
+      if (vikeOrb) {
+        const greeting = getLocationGreeting(getGreeting());
+        vikeOrb.speak(
+          `${greeting} I am the Vocal Interface for a Kinetic Exploration Vyke, built by Senior Sir Geoffrey Karanja. Feel Warmly Welcomed,and hope you enjoy the wornderfull experience. Type help to begin, or click me to speak.`
+        );
+      } else if (attempts < 10) {
+        setTimeout(trySpeak, 200);
+      }
+    };
+    setTimeout(trySpeak, 800);
+  }
   // Confetti launcher — works globally
   function launchConfetti() {
     const canvas = document.createElement('canvas');

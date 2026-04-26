@@ -18,24 +18,16 @@
     { text: '─────────────────────────────────────',   delay: 1400, type: 'border' },
     { text: greeting,                                   delay: 2000, type: 'output' },
     { text: 'I am VIKE. Built by Senior Sir Geoffrey.',      delay: 2800, type: 'output' },
-    { text: "He's expecting your call.",                delay: 3500, type: 'output' },
+    { text: "Hope you enjoy the experience ",                delay: 3500, type: 'output' },
     { text: '─────────────────────────────────────',   delay: 4100, type: 'border' },
     { text: "Type 'help' to begin. Or speak.",          delay: 4700, type: 'accent' },
   ];
 
-  onMount(() => {
-    // Fade container in
+ onMount(() => {
     setTimeout(() => visible = true, 100);
 
-    // Play chime only after a small interaction delay
-    // We attach it to the first user gesture instead
-    const unlockAudio = () => {
-      playBootChime();
-      window.removeEventListener('mousemove', unlockAudio);
-      window.removeEventListener('keydown', unlockAudio);
-    };
-    window.addEventListener('mousemove', unlockAudio, { once: true });
-    window.addEventListener('keydown',   unlockAudio, { once: true });
+    // Play chime immediately — no gesture gate
+    setTimeout(() => playBootChime(), 400);
 
     // Animate lines in one by one
     sequence.forEach(({ text, delay, type }) => {
