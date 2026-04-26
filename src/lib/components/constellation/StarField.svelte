@@ -291,8 +291,7 @@
 
         <div class="detail-actions">
           {#if selected.status === 'live'}
-            
-              href={selected.url}
+            <a href={selected.url}
               target="_blank"
               rel="noopener noreferrer"
               class="btn-live"
