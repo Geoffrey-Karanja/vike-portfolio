@@ -125,7 +125,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="terminal glass" on:click={handleTerminalClick}>
+<div class="terminal glass" on:click={() => inputRef?.focus()}>
 
   <!-- Header -->
   <div class="terminal-header">
