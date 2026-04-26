@@ -240,17 +240,10 @@
      <button
         class="proj-label"
         class:selected={selected?.id === proj.id}
-        style="
-          left: {i === 0 ? '18%' : i === 1 ? '50%' : '82%'};
-          top: 50%;
-          transform: translate(-50%, -50%);
-          border-color: {proj.typeColor}22;
-          --proj-color: {proj.typeColor};
-        "
+        style="..."
         on:click={() => { playClick(); selected = proj; targetRadius = 14; }}
-        role="button"
-        tabindex="0"
       >
+      
         <div class="proj-icon">{proj.icon}</div>
         <div class="proj-name font-mono">{proj.name}</div>
         <div class="proj-type font-mono" style="color: {proj.typeColor}">{proj.type}</div>
@@ -263,11 +256,13 @@
 
   <!-- Selected project detail panel -->
   {#if selected}
-    <div
+   <div
       class="detail-backdrop"
       on:click|self={closeSelected}
+      on:keydown={(e) => e.key === 'Escape' && closeSelected()}
       role="dialog"
       aria-label="Project detail"
+      tabindex="-1"
     >
       <div class="detail glass-heavy" style="--proj-color: {selected.typeColor}">
 
