@@ -84,7 +84,7 @@
         <div class="speaking-icon">◈</div>
       {:else if $vikeState === 'thinking'}
         <div class="thinking-dots">
-          <span /><span /><span />
+          <span></span><span></span><span></span>
         </div>
       {:else}
         <div class="mic-icon">⬡</div>

@@ -66,7 +66,7 @@
   height="40"
   class="waveform"
   class:active
-/>
+></canvas>
 
 <style>
   .waveform {

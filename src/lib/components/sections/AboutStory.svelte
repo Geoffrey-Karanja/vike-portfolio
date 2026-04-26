@@ -52,7 +52,7 @@
         <p class="body">{chapter.body}</p>
       </div>
       {#if i < chapters.length - 1}
-        <div class="rule" class:visible={visible[i]} />
+        <div class="rule" class:visible={visible[i]}></div>
       {/if}
     </div>
   {/each}

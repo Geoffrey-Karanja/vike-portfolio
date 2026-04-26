@@ -183,7 +183,7 @@
                 background: {item.color};
                 transition-delay: {i * 0.15 + 0.3}s;
               "
-            />
+           ></div> 
           </div>
         </div>
       {/each}

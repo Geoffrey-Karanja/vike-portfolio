@@ -40,12 +40,12 @@ const dispatch = createEventDispatcher();
   <!-- Full bleed photo -->
   <div class="photo-wrap">
     <img src="/karan.jpeg" alt="Geoffrey" class="photo" />
-    <div class="photo-overlay" />
+    <div class="photo-overlay" ></div>
   </div>
 
   <!-- Status badge -->
   <div class="status glass">
-    <span class="status-dot" />
+    <span class="status-dot" ></span>
     <span class="font-mono">Open to opportunities</span>
   </div>
 

@@ -91,15 +91,13 @@
       </span>
     </div>
 
-    <div
+   <button
       class="scroll-hint font-mono"
       class:visible={scrollIndicator}
       on:click={onScrollDown}
-      role="button"
-      tabindex="0"
     >
       scroll to explore ↓
-    </div>
+    </button>
 
   </div>
 
@@ -115,7 +113,7 @@
       "
     >
       <!-- Glass reflection that follows mouse -->
-      <div class="photo-glare" />
+      <div class="photo-glare"></div>
 
       <img
         src="/karan.jpeg"

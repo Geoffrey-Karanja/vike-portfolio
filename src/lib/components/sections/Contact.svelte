@@ -75,7 +75,7 @@
     <div class="photo-wrap">
       <img src="/karan.jpeg" alt="Geoffrey" class="photo" />
       <div class="status-badge glass">
-        <span class="status-dot" />
+        <span class="status-dot"> </span>
         <span class="font-mono">Open to opportunities</span>
       </div>
     </div>
@@ -118,9 +118,9 @@
 
     <!-- Divider -->
     <div class="divider">
-      <span class="divider-line" />
+      <span class="divider-line"></span>
       <span class="divider-label font-mono">or send a message</span>
-      <span class="divider-line" />
+      <span class="divider-line"></span> 
     </div>
 
     <!-- Form -->
@@ -170,7 +170,7 @@
             class="input textarea font-mono"
             rows="4"
             required
-          />
+         ></textarea>
         </div>
 
         <button
@@ -180,7 +180,7 @@
           disabled={sending}
         >
           {#if sending}
-            <span class="dots"><span /><span /><span /></span>
+            <span class="dots"><span></span><span></span><span></span></span>
           {:else}
             Send Message ↗
           {/if}

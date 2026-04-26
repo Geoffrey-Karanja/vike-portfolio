@@ -232,12 +232,12 @@
     on:mousemove={onMouseMove}
     on:mouseup={onMouseUp}
     on:wheel={onWheel}
-  />
+  ></canvas>
 
   <!-- Project labels floating over canvas -->
   <div class="labels">
     {#each projects as proj, i}
-      <div
+     <button
         class="proj-label"
         class:selected={selected?.id === proj.id}
         style="
@@ -254,7 +254,7 @@
         <div class="proj-icon">{proj.icon}</div>
         <div class="proj-name font-mono">{proj.name}</div>
         <div class="proj-type font-mono" style="color: {proj.typeColor}">{proj.type}</div>
-      </div>
+  </button>
     {/each}
   </div>
 
@@ -263,56 +263,49 @@
 
   <!-- Selected project detail panel -->
   {#if selected}
-    <div class="detail-backdrop" on:click|self={closeSelected}>
-      <div
-        class="detail glass-heavy"
-        style="--proj-color: {selected.typeColor}"
-      >
-        <!-- Header -->
+    <div
+      class="detail-backdrop"
+      on:click|self={closeSelected}
+      role="dialog"
+      aria-label="Project detail"
+    >
+      <div class="detail glass-heavy" style="--proj-color: {selected.typeColor}">
+
         <div class="detail-header">
           <span class="detail-icon">{selected.icon}</span>
           <div class="detail-titles">
             <h2 class="detail-name">{selected.name}</h2>
-            <span
-              class="detail-type font-mono"
-              style="color: {selected.typeColor}"
-            >{selected.type}</span>
+            <span class="detail-type font-mono" style="color: {selected.typeColor}">{selected.type}</span>
           </div>
           <button class="close-btn" on:click={closeSelected}>✕</button>
         </div>
 
-        <!-- Tagline -->
         <p class="detail-tagline">{selected.tagline}</p>
-
-        <!-- Description -->
         <p class="detail-desc">{selected.description}</p>
 
-        <!-- Stack -->
         <div class="stack-row">
           {#each selected.stack as tech}
             <span class="stack-tag font-mono">{tech}</span>
           {/each}
         </div>
 
-        <!-- CTA -->
         <div class="detail-actions">
           {#if selected.status === 'live'}
-            <a
+            
               href={selected.url}
               target="_blank"
               rel="noopener noreferrer"
               class="btn-live"
               on:click={playClick}
-            >
-              View Live ↗
-            </a>
+            >View Live ↗</a>
           {:else}
             <div class="btn-soon">
-              <span class="pulse-dot" />
+              <span class="pulse-dot"></span>
               Coming Soon
             </div>
           {/if}
         </div>
+
       </div>
     </div>
   {/if}

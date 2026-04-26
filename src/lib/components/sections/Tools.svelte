@@ -29,8 +29,8 @@
           <div
             class="bar-fill"
             style="width: {visible ? tool.level : 0}%;
-                   transition-delay: {i * 0.07 + 0.3}s"
-          />
+                   transition-delay: {i * 0.15 + 0.3}s;"
+          ></div>
         </div>
 
         <span class="level font-mono">{tool.level}%</span>

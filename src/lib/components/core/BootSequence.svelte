@@ -64,7 +64,7 @@
 
   {#if !done}
     <div class="line">
-      <span class="cursor-blink" />
+      <span class="cursor-blink"></span>
     </div>
   {/if}
 </div>

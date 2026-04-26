@@ -61,7 +61,7 @@
 
   <div class="cards">
     {#each projects as proj, i}
-      <div
+      <button
         class="card glass"
         style="
           animation-delay: {i * 0.12}s;
@@ -72,8 +72,6 @@
           --proj-color: {proj.typeColor};
         "
         on:click={() => openProject(proj)}
-        role="button"
-        tabindex="0"
       >
         <!-- Top row -->
         <div class="card-top">
@@ -114,7 +112,7 @@
             Coming Soon
           </div>
         {/if}
-      </div>
+        </button>
     {/each}
   </div>
 

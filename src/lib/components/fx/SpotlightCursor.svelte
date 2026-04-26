@@ -70,7 +70,7 @@
     );
     transform: translate(-50%, -50%) scale({clicking ? 0.85 : 1});
   "
-/>
+></div>
 
 <!-- Trail particles -->
 {#each trail as particle, i}
@@ -85,7 +85,7 @@
       background: {$accentColor};
       transform: translate(-50%, -50%) scale({clicking ? 0.6 : 1});
     "
-  />
+  ></div>
 {/each}
 
 <!-- Main dot cursor -->
@@ -97,7 +97,7 @@
     background: {$accentColor};
     transform: translate(-50%, -50%) scale({clicking ? 0.6 : 1});
   "
-/>
+> </div>
 
 <style>
   .spotlight {

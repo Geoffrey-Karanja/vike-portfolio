@@ -61,7 +61,7 @@
 
   {#if loading}
     <div class="loading">
-      <span class="cursor-blink" />
+      <span class="cursor-blink"></span>
       <span class="font-mono text-muted"> Pulling live stats...</span>
     </div>
   {:else}

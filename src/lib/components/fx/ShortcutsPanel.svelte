@@ -50,7 +50,7 @@
 <!-- Panel -->
 {#if open}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="backdrop" on:click|self={() => open = false}>
+ <div class="backdrop" on:click|self={() => open = false} role="presentation">
     <div class="panel glass-heavy fade-up">
 
       <div class="panel-header">

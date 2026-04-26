@@ -70,7 +70,7 @@
 
   <div class="timeline">
     <!-- Vertical line -->
-    <div class="line" class:drawn={lineDrawn} />
+    <div class="line" class:drawn={lineDrawn}></div>
 
     {#each milestones as m, i}
       <div

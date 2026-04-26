@@ -121,12 +121,12 @@
   <!-- Header -->
   <div class="terminal-header">
     <div class="dots">
-      <span class="dot dot--red"   />
-      <span class="dot dot--amber" />
-      <span class="dot dot--green" />
+      <span class="dot dot--red"></span>
+      <span class="dot dot--amber"></span>
+      <span class="dot dot--green"></span>
     </div>
     <span class="title">vike — zsh</span>
-    <span class="spacer" />
+    <span class="spacer"></span>
   </div>
 
   <!-- Body -->
