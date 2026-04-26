@@ -1,0 +1,10 @@
+[
+  { "name": "Swift",       "icon": "🍎", "level": 90, "desc": "Native iOS & macOS apps" },
+  { "name": "JavaScript",  "icon": "⚡", "level": 85, "desc": "Full-stack web" },
+  { "name": "Node.js",     "icon": "🟢", "level": 80, "desc": "Backend & APIs" },
+  { "name": "Python",      "icon": "🐍", "level": 75, "desc": "Scripting & ML" },
+  { "name": "SwiftUI",     "icon": "✦",  "level": 88, "desc": "Declarative UI" },
+  { "name": "Git",         "icon": "🌿", "level": 92, "desc": "Version control" },
+  { "name": "Docker",      "icon": "🐳", "level": 70, "desc": "Containerisation" },
+  { "name": "Figma",       "icon": "🎨", "level": 78, "desc": "Design & prototyping" }
+]

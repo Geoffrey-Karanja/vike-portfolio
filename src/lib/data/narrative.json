@@ -1,0 +1,12 @@
+[
+  { "line": "I write software that feels inevitable.",        "delay": 0 },
+  { "line": "Not just functional — felt.",                   "delay": 0.3 },
+  { "line": "I am Senior Sir Geoffrey.",                     "delay": 0.8 },
+  { "line": "An iOS developer based in Njoro, Kenya.",       "delay": 1.2 },
+  { "line": "I build with Swift the way poets build with words —", "delay": 1.8 },
+  { "line": "deliberately, precisely, beautifully.",         "delay": 2.3 },
+  { "line": "I do not just ship features.",                  "delay": 2.9 },
+  { "line": "I craft experiences.",                          "delay": 3.2 },
+  { "line": "Apple calls this the Human Interface.",         "delay": 3.8 },
+  { "line": "I call it respect for the person holding the phone.", "delay": 4.3 }
+]

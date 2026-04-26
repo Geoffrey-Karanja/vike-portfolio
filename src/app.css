@@ -1,0 +1,265 @@
+/* ============================================
+   VIKE PORTFOLIO — GLOBAL DESIGN SYSTEM
+   Emmanuel Bwire
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES — THE DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Core Colors */
+  --color-bg:           #000000;
+  --color-bg-secondary: #0a0a0a;
+  --color-surface:      rgba(255, 255, 255, 0.03);
+  --color-surface-hover:rgba(255, 255, 255, 0.06);
+  --color-border:       rgba(255, 255, 255, 0.08);
+  --color-border-bright:rgba(255, 255, 255, 0.15);
+
+  /* Text */
+  --color-text-primary:   rgba(255, 255, 255, 0.92);
+  --color-text-secondary: rgba(255, 255, 255, 0.45);
+  --color-text-muted:     rgba(255, 255, 255, 0.2);
+
+  /* Accent — changes with time of day via AdaptiveTheme */
+  --color-accent:       #0A84FF;
+  --color-accent-glow:  rgba(10, 132, 255, 0.15);
+  --color-accent-dim:   rgba(10, 132, 255, 0.06);
+
+  /* Terminal green for command lines */
+  --color-terminal:     #30D158;
+  --color-terminal-dim: rgba(48, 209, 88, 0.15);
+
+  /* Glass Morphism */
+  --glass-bg:           rgba(255, 255, 255, 0.03);
+  --glass-border:       rgba(255, 255, 255, 0.08);
+  --glass-blur:         blur(24px);
+  --glass-blur-heavy:   blur(48px);
+  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.6),
+                        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+
+  /* Typography */
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:  'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Spacing Scale */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border Radius */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo:   cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:  150ms;
+  --duration-base:  300ms;
+  --duration-slow:  600ms;
+  --duration-crawl: 1200ms;
+
+  /* Z-index layers */
+  --z-base:      1;
+  --z-overlay:   10;
+  --z-modal:     100;
+  --z-orb:       200;
+  --z-cursor:    999;
+}
+
+/* ============================================
+   TIME-OF-DAY MOOD THEMES
+   Set by AdaptiveTheme.svelte via data attribute
+   ============================================ */
+[data-mood="dawn"] {
+  --color-accent:      #FF9F0A;
+  --color-accent-glow: rgba(255, 159, 10, 0.15);
+  --color-accent-dim:  rgba(255, 159, 10, 0.06);
+}
+[data-mood="day"] {
+  --color-accent:      #0A84FF;
+  --color-accent-glow: rgba(10, 132, 255, 0.15);
+  --color-accent-dim:  rgba(10, 132, 255, 0.06);
+}
+[data-mood="dusk"] {
+  --color-accent:      #FF453A;
+  --color-accent-glow: rgba(255, 69, 58, 0.15);
+  --color-accent-dim:  rgba(255, 69, 58, 0.06);
+}
+[data-mood="night"] {
+  --color-accent:      #BF5AF2;
+  --color-accent-glow: rgba(191, 90, 242, 0.15);
+  --color-accent-dim:  rgba(191, 90, 242, 0.06);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow: hidden; /* Terminal controls scroll */
+  cursor: none;     /* We use custom spotlight cursor */
+}
+
+#app {
+  height: 100%;
+  position: relative;
+}
+
+/* ============================================
+   SCROLLBAR — Minimal, Apple-like
+   ============================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-bright);
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   GLASS MORPHISM UTILITY
+   ============================================ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-heavy {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--color-border-bright);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-terminal {
+  color: var(--color-terminal);
+}
+
+.text-muted {
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   TERMINAL LINE UTILITIES
+   ============================================ */
+.terminal-prompt::before {
+  content: '❯ ';
+  color: var(--color-terminal);
+  font-family: var(--font-mono);
+}
+
+.terminal-output {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ============================================
+   CURSOR BLINK ANIMATION
+   ============================================ */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--color-terminal);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+/* ============================================
+   FADE IN UTILITY
+   ============================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out-expo) both;
+}
+
+/* ============================================
+   GLOW PULSE — for the orb breathing
+   ============================================ */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--color-accent-glow),
+                0 0 40px var(--color-accent-dim);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--color-accent-glow),
+                0 0 80px var(--color-accent-dim);
+  }
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+  background: var(--color-accent-glow);
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "allsafe",
+    "name": "AllSafe",
+    "type": "Frontend",
+    "typeColor": "#0A84FF",
+    "tagline": "Cyber Warfare Interface Simulation",
+    "description": "An immersive frontend portfolio demonstrating elite cybersecurity operational interfaces with cinematic visual effects and tactical interactions. Built for impact.",
+    "url": "https://geoffrey-karanja.github.io/allsafe-portfolio/",
+    "stack": ["HTML", "CSS", "JavaScript", "WebGL"],
+    "status": "live",
+    "icon": "🛡️"
+  },
+  {
+    "id": "techstore",
+    "name": "Tech Store",
+    "type": "Full Stack",
+    "typeColor": "#30D158",
+    "tagline": "E-Commerce Platform for Electrical Products",
+    "description": "A full stack e-commerce platform built for electrical products. Features product listings, cart management, and a complete storefront experience.",
+    "url": "https://geoffrey-karanja.github.io/Tech-store/",
+    "stack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    "status": "live",
+    "icon": "⚡"
+  },
+  {
+    "id": "api",
+    "name": "REST API",
+    "type": "Backend",
+    "typeColor": "#BF5AF2",
+    "tagline": "Node.js API — Local Deploy",
+    "description": "A production-ready REST API for managing students, lecturers, attendance, grades, and assignments. Built with FastAPI, PostgreSQL, and Redis.. Coming to a server near you soon.",
+    "url": null,
+    "stack": ["FastAPI", "PostgreSQL", "Redis"],
+    "status": "coming-soon",
+    "icon": "⚙️"
+  }
+]

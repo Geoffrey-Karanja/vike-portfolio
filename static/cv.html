@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geoffrey Kamau — CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #000;
+      margin-bottom: 32px;
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .title {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #555;
+      line-height: 2;
+    }
+
+    .contact-info a { color: #0A84FF; text-decoration: none; }
+
+    h2 {
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #999;
+      margin-bottom: 16px;
+      margin-top: 32px;
+    }
+
+    .summary {
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .entry {
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .entry-title {
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .entry-sub {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .entry-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #999;
+      white-space: nowrap;
+    }
+
+    .entry-desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 6px;
+      grid-column: 1 / -1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      grid-column: 1 / -1;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      background: #f0f0f0;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #444;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .skill {
+      font-size: 0.82rem;
+      color: #444;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cert {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .cert-icon {
+      font-size: 1.5rem;
+    }
+
+    .cert-info { flex: 1; }
+    .cert-name { font-weight: 500; font-size: 0.88rem; }
+    .cert-org  { font-size: 0.75rem; color: #888; }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: #bbb;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="name">Geoffrey Kamau</div>
+      <div class="title">iOS Developer · Cybersecurity Enthusiast · Full Stack Builder</div>
+    </div>
+    <div class="contact-info">
+      <div><a href="mailto:gkaranja273@gmail.com">gkaranja273@gmail.com</a></div>
+      <div><a href="https://wa.me/254740833524">+254 740 833 524</a></div>
+      <div><a href="https://github.com/Geoffrey-Karanja">github.com/Geoffrey-Karanja</a></div>
+      <div>Njoro, Nakuru County, Kenya</div>
+    </div>
+  </div>
+
+  <h2>Profile</h2>
+  <p class="summary">
+    Self-taught developer and technology enthusiast with 3 years of experience
+    building web and mobile applications. Cisco-certified in cybersecurity.
+    Passionate about creating software that feels inevitable — not just functional,
+    but felt. Currently focused on iOS development with Swift and full-stack web
+    projects. Driven by the belief that the best ideas have never cared about zip codes.
+  </p>
+
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <div class="entry-title">AllSafe — Cyber Warfare Interface Simulation</div>
+    <div class="entry-date">2025</div>
+    <div class="entry-desc">
+      Immersive frontend portfolio demonstrating elite cybersecurity operational
+      interfaces with cinematic visual effects and tactical interactions.
+    </div>
+    <div class="tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">WebGL</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-title">Tech Store — E-Commerce Platform</div>
+    <div class="entry-date">2025</div>
+    <div class="entry-desc">
+      Full stack e-commerce platform for electrical products featuring product
+      listings, cart management, and complete storefront experience.
+    </div>
+    <div class="tags">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">GitHub Pages</span>
+    </div>
+  </div>
+
+  <h2>Education & Learning</h2>
+
+  <div class="entry">
+    <div class="entry-title">Secondary School Education</div>
+    <div class="entry-date">2023 — 2025</div>
+    <div class="entry-sub">Kenya Certificate of Secondary Education</div>
+    <div class="entry-desc">
+      Began studying Linux and cybersecurity independently while in school.
+      Installed Kali NetHunter on mobile — security before syntax.
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-title">Self-Taught Development</div>
+    <div class="entry-date">2024 — Present</div>
+    <div class="entry-sub">HTML · CSS · JavaScript · Swift · React · Docker · Networking</div>
+    <div class="entry-desc">
+      Started with HTML, built and sold Valentine's sites, progressed to
+      full stack applications and iOS development.
+    </div>
+  </div>
+
+  <h2>Certifications</h2>
+  <div class="cert">
+    <div class="cert-icon">🛡️</div>
+    <div class="cert-info">
+      <div class="cert-name">Introduction to Cybersecurity</div>
+      <div class="cert-org">Cisco Networking Academy · Issued April 10, 2026</div>
+    </div>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">Swift & SwiftUI</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">HTML & CSS</div>
+    <div class="skill">React</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">Docker</div>
+    <div class="skill">Linux</div>
+    <div class="skill">Cybersecurity</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Networking</div>
+    <div class="skill">Figma</div>
+    <div class="skill">Python</div>
+  </div>
+
+  <div class="footer">
+    <span>Geoffrey Kamau · CV · 2026</span>
+    <span>geoffrey-karanja.github.io/allsafe-portfolio</span>
+  </div>
+
+</body>
+</html>
