@@ -1,5 +1,6 @@
 <script>
   import { activeSection } from '$lib/stores/terminal.js';
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { playClick } from '$lib/utils/audio.js';
 
@@ -154,7 +155,7 @@
   <!-- whoami modal -->
   {#if whoamiVisible}
     <div class="whoami-modal glass-heavy fade-up">
-      <img src="/karan.jpeg" alt="Geoffrey" class="whoami-photo" />
+      <img src="{base}/karan.jpeg" alt="Geoffrey" class="whoami-photo" />
       <div class="whoami-info">
         <span class="whoami-name font-mono">Senior Sir Geoffrey</span>
         <span class="whoami-role font-mono">iOS Dev · Cybersecurity · Builder</span>
@@ -168,7 +169,7 @@
             on:click={() => { activeSection.set('contact'); whoamiVisible = false; }}>
             Contact
           </button>
-          <a href="/cv.html" target="_blank" rel="noopener noreferrer"
+          <a href="{base}/cv.html" target="_blank" rel="noopener noreferrer"
             class="whoami-btn">
             CV ↗
           </a>

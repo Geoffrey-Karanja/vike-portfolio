@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
 
   const stats = [
     { value: 3,    suffix: '',  label: 'Years Coding',    icon: '⏱' },
@@ -143,7 +144,7 @@
   <div class="cert-section">
     <div class="section-label font-mono">// certifications.json</div>
     <div class="cert-card glass">
-      <img src="/cisco-cert.png" alt="Cisco Cybersecurity Certificate" class="cert-img" />
+      <img src="{base}/cisco-cert.png" alt="Cisco Cybersecurity Certificate" class="cert-img" />
       <div class="cert-info">
         <div class="cert-badge">
           <span class="cert-org font-mono">Cisco Networking Academy</span>

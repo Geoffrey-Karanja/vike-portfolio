@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   import { accentColor } from '$lib/stores/theme.js';
 
   let mounted   = false;
@@ -116,7 +117,7 @@
       <div class="photo-glare"></div>
 
       <img
-        src="/karan.jpeg"
+        src="{base}/karan.jpeg"
         alt="Senior Sir Geoffrey"
         class="photo"
       />

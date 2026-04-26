@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   import { playClick } from '$lib/utils/audio.js';
 
   let name    = '';
@@ -73,7 +74,7 @@
   <!-- Left — Identity -->
   <div class="identity">
     <div class="photo-wrap">
-      <img src="/karan.jpeg" alt="Geoffrey" class="photo" />
+      <img src="{base}/karan.jpeg" alt="Geoffrey" class="photo" />
       <div class="status-badge glass">
         <span class="status-dot"> </span>
         <span class="font-mono">Open to opportunities</span>

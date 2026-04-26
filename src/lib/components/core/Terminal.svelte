@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte';
+  import { base } from '$app/paths';
   import CodePoetry from '$lib/components/fx/CodePoetry.svelte';
   import { history, booted, completeBoot } from '$lib/stores/terminal.js';
   import { activeSection } from '$lib/stores/terminal.js';
@@ -169,7 +170,7 @@
   <!-- whoami modal -->
 {#if whoamiVisible}
   <div class="whoami-modal glass-heavy fade-up">
-    <img src="/karan.jpeg" alt="Geoffrey" class="whoami-photo" />
+    <img src="{base}/karan.jpeg" alt="Geoffrey" class="whoami-photo" />
     <div class="whoami-info">
       <span class="whoami-name font-mono">Senior Sir Geoffrey</span>
       <span class="whoami-role font-mono">iOS Dev · Cybersecurity · Builder</span>
@@ -181,7 +182,7 @@
   <button class="whoami-btn whoami-btn--accent" on:click={() => { activeSection.set('contact'); whoamiVisible = false; }}>
     Get in touch
   </button>
-  <a href="/cv.html" target="_blank" class="whoami-btn" on:click={playClick}>
+  <a href="{base}/cv.html" target="_blank" class="whoami-btn" on:click={playClick}>
     Download CV
   </a>
 </div>

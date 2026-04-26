@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   import { activeSection } from '$lib/stores/terminal.js';
   import { accentColor }   from '$lib/stores/theme.js';
   import { getGreeting }   from '$lib/utils/time.js';
@@ -39,7 +40,7 @@ const dispatch = createEventDispatcher();
 
   <!-- Full bleed photo -->
   <div class="photo-wrap">
-    <img src="/karan.jpeg" alt="Geoffrey" class="photo" />
+    <img src="{base}/karan.jpeg" alt="Geoffrey" class="photo" />
     <div class="photo-overlay" ></div>
   </div>
 
